@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: sor-ser-web
+    env: docker
+    plan: free
+    autoDeploy: true
+    docker:
+      dockerfilePath: Dockerfile
+    startCommand: "sh docker/start.sh"
+  - type: worker
+    name: sor-ser-worker
+    env: docker
+    plan: free
+    autoDeploy: true
+    docker:
+      dockerfilePath: Dockerfile
+    startCommand: "sh docker/start.sh worker"
